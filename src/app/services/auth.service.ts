@@ -49,7 +49,7 @@ export class AuthService {
     };
     this.http
       .post<{ token: string; expiresIn: number; auth: any; error: any }>(
-        'https://volida-be.herokuapp.com/api/register',
+        'https://pigaino-be.herokuapp.com/api/register',
         authData
       )
       .subscribe((response) => {
@@ -82,7 +82,7 @@ export class AuthService {
     const authData: AuthData = { email: email, password: password };
     this.http
       .post<{ token: string; expiresIn: number; auth: any; error: any }>(
-        'https://volida-be.herokuapp.com/api/login',
+        'https://pigaino-be.herokuapp.com/api/login',
         authData
       )
       .subscribe((response) => {
