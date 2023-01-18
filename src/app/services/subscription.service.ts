@@ -40,7 +40,7 @@ export class SubscriptionService {
         if (response.subscriptions.length === 0) {
           this.router.navigate(['']);
         } else {
-          this.router.navigate(['/courses']);
+          this.router.navigate(['/classes']);
         }
       });
   }

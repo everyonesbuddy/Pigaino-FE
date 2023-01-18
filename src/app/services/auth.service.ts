@@ -72,7 +72,7 @@ export class AuthService {
             now.getTime() + expiresInDuration * 1000
           );
           this.saveAuthData(token, expirationDate);
-          this.router.navigate(['/courses']);
+          this.router.navigate(['/classes']);
         }
       });
   }
@@ -105,7 +105,7 @@ export class AuthService {
             now.getTime() + expiresInDuration * 1000
           );
           this.saveAuthData(token, expirationDate);
-          this.router.navigate(['events']);
+          this.router.navigate(['classes']);
         }
       });
   }
