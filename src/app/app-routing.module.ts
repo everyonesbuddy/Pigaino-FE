@@ -59,7 +59,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'events',
+    path: 'courses',
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
