@@ -29,7 +29,6 @@ export class EventsService {
   }
 
   getEvent(eventId: any): Promise<Entry<any>> {
-    // return this.http.post<{token: string, expiresIn: number, auth: any, error: any}>("https://volida-be.herokuapp.com/api/get-event-details", {id:eventId, userId:localStorage.getItem('_id')});
     return this.client
       .getEntries(
         Object.assign(
