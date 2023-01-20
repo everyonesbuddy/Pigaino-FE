@@ -55,10 +55,6 @@
   border-bottom: 3px solid #3d3d3d;
 }
 
-.button {
-  font-family: "Ubuntu", sans-serif;
-}
-
 .tabs .wrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -149,6 +145,7 @@ button {
   color: #fff;
   padding: 0.8rem 1.5rem;
   cursor: pointer;
+  font-family: "Ubuntu", sans-serif;
 }
 
 @media (max-width: 960px) {
@@ -173,6 +170,7 @@ button {
   button {
     font-size: 0.6rem;
     padding: 0.4rem 1rem;
+    font-family: "Ubuntu", sans-serif;
   }
 
   .text-lg {
