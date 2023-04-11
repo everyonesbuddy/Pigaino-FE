@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   STRIPE_PUBLISHABLE_KEY:
-    'pk_live_51Mi5DFJ7Pg7RQCISPPMepYLLrzLiuoOOKtYB6dlfPOMWxd2pMz49qeUf6oqFjpELnn4o0b4PC5sBOBH7A8bgT42900W9P031l1',
+    'pk_live_51Mv6N6KV4ia5PwUL3iaZkqQteyVyxtJX6HN5TZi1U50BDcatAl8AAdZShQyFb2p2v19a7OgFFiEa9ZwOJL1VwyyL0077nALaYl',
   contentfulVolidaEvents: {
     spaceId: 'dt4p1vme6bp9',
     token: 'GmuP75B48SiWSBu9fY6Nw9l826e8NYwjc2x0jllo9qw',
