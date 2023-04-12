@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SubscriptionService {
   constructor(private http: HttpClient, private router: Router) {}
 
-  handlePayment(id: any) {
+  handleSubscription(id: any) {
     const subsData: SubsData = {
       id: id,
       auth: { _id: localStorage.getItem('_id') },
@@ -21,33 +21,87 @@ export class SubscriptionService {
     );
     this.http
       .post(
-        'https://pigaino-be.herokuapp.com/api/create-payment-pigaino',
+        'https://pigaino-be.herokuapp.com/api/create-subscription',
         subsData,
-        { headers: header }
+        {
+          headers: header,
+        }
       )
       .subscribe((response: any) => {
         return window.open(response, '_self');
       });
   }
 
-  getPaymentStatus() {
+  // handleDonations(id: any) {
+  //   const subsData: SubsData = {
+  //     id: id,
+  //     auth: { _id: localStorage.getItem('_id') },
+  //   };
+  //   let header = new HttpHeaders().set(
+  //     'Authorization',
+  //     'Bearer ' + localStorage.getItem('token')
+  //   );
+  //   this.http
+  //     .post('https://pigaino-be.herokuapp.com/api/create-payment', subsData, {
+  //       headers: header,
+  //     })
+  //     .subscribe((response: any) => {
+  //       return window.open(response, '_blank');
+  //     });
+  // }
+
+  // getPaymentStatus() {
+  //   this.http
+  //     .get(
+  //       'https://pigaino-be.herokuapp.com/api/payment-status/?_id=' +
+  //         localStorage.getItem('_id')
+  //     )
+  //     .subscribe((response: any) => {
+  //       if (response.subscriptions.length === 0) {
+  //         this.router.navigate(['']);
+  //       } else {
+  //         this.router.navigate(['/dashboard']);
+  //       }
+  //     });
+  // }
+
+  getSubscriptionStatus() {
+    let accessGranted = false;
     this.http
       .get(
-        'https://pigaino-be.herokuapp.com/api/payment-status-pigaino/?_id=' +
+        'https://pigaino-be.herokuapp.com/api/subscription-status/?_id=' +
           localStorage.getItem('_id')
       )
       .subscribe((response: any) => {
-        if (response.subscriptions.length === 0) {
-          this.router.navigate(['']);
-        } else {
-          this.router.navigate(['/classes']);
+        for (let i = 0; i < response.subscriptions.length; i++) {
+          if (
+            response.subscriptions.length > 0 &&
+            response.subscriptions[i].status === 'active'
+          ) {
+            accessGranted = true;
+            break;
+          }
         }
+        if (accessGranted) {
+          // Grant access
+          console.log('Access granted');
+          this.router.navigate(['/dashboard']);
+        } else {
+          // Deny access
+          console.log('Access denied');
+          this.router.navigate(['/subscriptions']);
+        }
+        // if (response.subscriptions.length === 0) {
+        //   this.router.navigate(['/subscriptions']);
+        // } else {
+        //   this.router.navigate(['/dashboard']);
+        // }
       });
   }
 
   checkPayment() {
     return this.http.get(
-      'https://pigaino-be.herokuapp.com/api/payment-status-pigaino/?_id=' +
+      'https://pigaino-be.herokuapp.com/api/payment-status/?_id=' +
         localStorage.getItem('_id')
     );
   }

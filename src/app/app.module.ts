@@ -31,6 +31,9 @@ import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { NewComponent } from './components/new/new.component';
+import { SubscriptionPageComponent } from './components/subscription-page/subscription-page.component';
+import { SubscriptionCardComponent } from './components/subscription-card/subscription-card.component';
+import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { NewComponent } from './components/new/new.component';
     PpvsComponent,
     FilmPageComponent,
     NewComponent,
+    SubscriptionPageComponent,
+    SubscriptionCardComponent,
+    SettingsPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,8 @@ import { VolidaFilmsComponent } from './components/volida-films/volida-films.com
 import { PpvsComponent } from './components/ppvs/ppvs.component';
 import { FilmPageComponent } from './components/film-page/film-page.component';
 import { NewComponent } from './components/new/new.component';
+import { SubscriptionPageComponent } from './components/subscription-page/subscription-page.component';
+import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 
 const routes: Routes = [
   {
@@ -54,12 +56,22 @@ const routes: Routes = [
     component: ReferAFriendComponent,
   },
   {
+    path: 'subscriptions',
+    component: SubscriptionPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'stripe/success',
     component: StripeSuccessComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'classes',
+    path: 'settings',
+    component: SettingsPageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
