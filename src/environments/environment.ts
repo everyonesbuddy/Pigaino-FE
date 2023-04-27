@@ -27,6 +27,13 @@ export const environment = {
       product: 'volidaFilms',
     },
   },
+  contentfulPigainoFreeContent: {
+    spaceId: 'dt4p1vme6bp9',
+    token: '11tdmIlReqis5dGElwkps-yhOREq6vpOBaU-jRccmPM',
+    contentTypeIds: {
+      product: 'pigainoFreeContent',
+    },
+  },
 };
 
 /*

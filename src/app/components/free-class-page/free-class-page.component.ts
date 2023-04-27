@@ -1,19 +1,17 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventsService } from 'src/app/services/events.service';
+import { FreeContentService } from 'src/app/services/free-content.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 import { TalkService } from 'src/app/services/talk.service';
 import Talk from 'talkjs';
 
 @Component({
-  selector: 'app-event-details',
-  templateUrl: './event-details.component.html',
-  styleUrls: ['./event-details.component.scss'],
+  selector: 'app-free-class-page',
+  templateUrl: './free-class-page.component.html',
+  styleUrls: ['./free-class-page.component.scss'],
 })
-export class EventDetailsComponent implements OnInit {
+export class FreeClassPageComponent implements OnInit {
   content: any = [];
-  amountInCents: any = '';
-  hideVideolink: boolean = false;
   private inbox: Talk.Inbox | any;
   private session: Talk.Session | any;
 
@@ -21,7 +19,7 @@ export class EventDetailsComponent implements OnInit {
 
   constructor(
     private subscriptionService: SubscriptionService,
-    private eventService: EventsService,
+    private freeContentService: FreeContentService,
     private activatedRoute: ActivatedRoute,
     private talkService: TalkService
   ) {}
@@ -29,7 +27,7 @@ export class EventDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       let id = params['id'];
-      this.eventService.getEvent(id).then((contents) => {
+      this.freeContentService.getFreeContent(id).then((contents) => {
         this.content = contents;
       });
     });

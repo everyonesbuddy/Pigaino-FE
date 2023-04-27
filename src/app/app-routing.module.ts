@@ -17,6 +17,8 @@ import { FilmPageComponent } from './components/film-page/film-page.component';
 import { NewComponent } from './components/new/new.component';
 import { SubscriptionPageComponent } from './components/subscription-page/subscription-page.component';
 import { SettingsPageComponent } from './components/settings-page/settings-page.component';
+import { FreeClassesComponent } from './components/free-classes/free-classes.component';
+import { FreeClassPageComponent } from './components/free-class-page/free-class-page.component';
 
 const routes: Routes = [
   {
@@ -80,6 +82,10 @@ const routes: Routes = [
     component: NewsPageComponent,
   },
   {
+    path: 'freeClasses',
+    component: FreeClassesComponent,
+  },
+  {
     path: 'filmPage/:id',
     component: FilmPageComponent,
   },
@@ -87,6 +93,10 @@ const routes: Routes = [
     path: 'detailPage/:id',
     component: EventDetailsComponent,
     canActivate: [AuthGuard],
+  },
+  {
+    path: 'freeClassPage/:id',
+    component: FreeClassPageComponent,
   },
 ];
 

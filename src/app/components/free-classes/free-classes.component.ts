@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Entry } from 'contentful';
-import { EventsService } from 'src/app/services/events.service';
+import { FreeContentService } from 'src/app/services/free-content.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'app-free-classes',
+  templateUrl: './free-classes.component.html',
+  styleUrls: ['./free-classes.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class FreeClassesComponent implements OnInit {
   contents: Entry<any>[] = [];
-  recentStreams: Entry<any>[] = [];
-  featuredActs: Entry<any>[] = [];
 
   constructor(
-    private eventService: EventsService,
+    private freeContentService: FreeContentService,
     private router: Router,
     private subscriptionService: SubscriptionService
   ) {}
@@ -25,12 +23,13 @@ export class DashboardComponent implements OnInit {
     this.subscriptionService.getSubscriptionStatus();
 
     //get all events
-    this.eventService.getAllEvents().then((contents) => {
+    this.freeContentService.getAllFreeContent().then((contents) => {
       this.contents = contents;
+      console.log('content', this.contents);
     });
   }
 
-  detailPage(id: any) {
-    this.router.navigate(['/detailPage/' + id]);
+  freeClassPage(id: any) {
+    this.router.navigate(['/freeClassPage/' + id]);
   }
 }

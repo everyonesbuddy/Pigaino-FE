@@ -17,19 +17,19 @@
 </section>
 
 <div class="events">
-  <div *ngFor="let event of events">
-    <div class="event" (click)="detailPage(event.sys.id)">
+  <div *ngFor="let content of contents">
+    <div class="event" (click)="detailPage(content.sys.id)">
       <div class="event-thumb-container">
         <img
-          src="{{ event.fields.image.fields.file.url }}"
+          src="{{ content.fields.image.fields.file.url }}"
           alt="thumbnail"
           class="event-thumbnail"
         />
       </div>
       <div class="event-description">
-        <p class="event-name">{{ event.fields.title }}</p>
-        <p class="event-info">{{ event.fields.dateAndTime }}</p>
-        <p class="event-info">{{ event.fields.location }}</p>
+        <p class="event-name">{{ content.fields.classTitle }}</p>
+        <p class="event-info">{{ content.fields.dateAndTime }}</p>
+        <p class="event-info">{{ content.fields.shortDescription }}</p>
       </div>
     </div>
   </div>

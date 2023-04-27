@@ -32,8 +32,8 @@
             </p>
             <p class="list-unstyled event-name-ul">
               <span
-                ><h6>Instructor:</h6>
-                {{ content.fields.classInstructor }}</span
+                ><h6>Class Instructor:</h6>
+                By {{ content.fields.classInstructor }}</span
               >
             </p>
           </div>
@@ -59,14 +59,6 @@
                 </ul>
               </li>
             </ul>
-            <!-- <button
-              class="btn btn-block purchaseBtn"
-              (click)="onPayment(event.fields.stripePriceId)"
-              *ngIf="!hideVideolink"
-            >
-              Buy Livestream ${{ event.fields.amountInCents / 100
-              }}<small> USD </small>
-            </button> -->
           </div>
         </div>
       </div>

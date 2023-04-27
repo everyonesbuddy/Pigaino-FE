@@ -1,0 +1,36 @@
+<section class="showcase">
+  <div class="showcase-content">
+    <h1>Lessons & classes from the world's best producers.</h1>
+    <p>
+      Refine your foundations, cultivate your passion, and progress with
+      guidance from top producers.
+    </p>
+  </div>
+</section>
+
+<section class="tabs">
+  <div class="wrapper">
+    <div id="tab-2">
+      <p>Explore Free classes</p>
+    </div>
+  </div>
+</section>
+
+<div class="events">
+  <div *ngFor="let content of contents">
+    <div class="event" (click)="freeClassPage(content.sys.id)">
+      <div class="event-thumb-container">
+        <img
+          src="{{ content.fields.image.fields.file.url }}"
+          alt="thumbnail"
+          class="event-thumbnail"
+        />
+      </div>
+      <div class="event-description">
+        <p class="event-name">{{ content.fields.classTitle }}</p>
+        <p class="event-info">By {{ content.fields.classInstructor }}</p>
+        <p class="event-info">{{ content.fields.shortDescription }}</p>
+      </div>
+    </div>
+  </div>
+</div>
