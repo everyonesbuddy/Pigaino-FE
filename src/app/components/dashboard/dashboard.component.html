@@ -1,24 +1,24 @@
 <section class="showcase">
   <div class="showcase-content">
-    <h1>Lessons & classes from the world's best producers.</h1>
-    <p>
+    <h1>Vetted network for top-tier music producers.</h1>
+    <!-- <p>
       Refine your foundations, cultivate your passion, and progress with
       guidance from top producers.
-    </p>
+    </p> -->
   </div>
 </section>
 
 <section class="tabs">
   <div class="wrapper">
     <div id="tab-2">
-      <p>Explore Pigaino classes</p>
+      <p>Upcoming meetings</p>
     </div>
   </div>
 </section>
 
 <div class="events">
   <div *ngFor="let content of contents">
-    <div class="event" (click)="detailPage(content.sys.id)">
+    <div class="event">
       <div class="event-thumb-container">
         <img
           src="{{ content.fields.image.fields.file.url }}"
@@ -28,8 +28,8 @@
       </div>
       <div class="event-description">
         <p class="event-name">{{ content.fields.classTitle }}</p>
-        <p class="event-info">{{ content.fields.dateAndTime }}</p>
         <p class="event-info">{{ content.fields.shortDescription }}</p>
+        <p class="event-info">{{ content.fields.classInstructor }}</p>
       </div>
     </div>
   </div>
