@@ -36,6 +36,7 @@ import { SubscriptionCardComponent } from './components/subscription-card/subscr
 import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 import { FreeClassesComponent } from './components/free-classes/free-classes.component';
 import { FreeClassPageComponent } from './components/free-class-page/free-class-page.component';
+import { DealFlowDetailsComponent } from './components/deal-flow-details/deal-flow-details.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { FreeClassPageComponent } from './components/free-class-page/free-class-
     SettingsPageComponent,
     FreeClassesComponent,
     FreeClassPageComponent,
+    DealFlowDetailsComponent,
   ],
   imports: [
     BrowserModule,

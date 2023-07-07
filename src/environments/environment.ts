@@ -34,6 +34,13 @@ export const environment = {
       product: 'pigainoFreeContent',
     },
   },
+  contentfulPigainoDealFlow: {
+    spaceId: 'dt4p1vme6bp9',
+    token: 'oqAqOV8PUyIHblWyp_gFh2OrrqMuJSmiP-mlewOWj7g',
+    contentTypeIds: {
+      product: 'pigainoDealFlow',
+    },
+  },
 };
 
 /*

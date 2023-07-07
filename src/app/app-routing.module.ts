@@ -19,6 +19,7 @@ import { SubscriptionPageComponent } from './components/subscription-page/subscr
 import { SettingsPageComponent } from './components/settings-page/settings-page.component';
 import { FreeClassesComponent } from './components/free-classes/free-classes.component';
 import { FreeClassPageComponent } from './components/free-class-page/free-class-page.component';
+import { DealFlowDetailsComponent } from './components/deal-flow-details/deal-flow-details.component';
 
 const routes: Routes = [
   {
@@ -97,6 +98,11 @@ const routes: Routes = [
   {
     path: 'freeClassPage/:id',
     component: FreeClassPageComponent,
+  },
+  {
+    path: 'dealsFlowDetailPage/:id',
+    component: DealFlowDetailsComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

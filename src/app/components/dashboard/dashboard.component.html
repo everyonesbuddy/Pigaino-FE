@@ -1,32 +1,33 @@
-<section class="showcase">
+<!-- <section class="showcase">
   <div class="showcase-content">
     <h1>Vetted network for top-tier real estate investors.</h1>
     <p>connect with other investors in the space, and build a great network.</p>
   </div>
-</section>
+</section> -->
 
 <section class="tabs">
   <div class="wrapper">
     <div id="tab-2">
-      <p>Upcoming meetings</p>
+      <p>Deal Flows</p>
     </div>
   </div>
 </section>
 
 <div class="events">
   <div *ngFor="let content of contents">
-    <div class="event">
+    <div class="event" (click)="dealFlowDetailPage(content.sys.id)">
       <div class="event-thumb-container">
         <img
-          src="{{ content.fields.image.fields.file.url }}"
+          src="{{ content.fields.images[0].fields.file.url }}"
           alt="thumbnail"
           class="event-thumbnail"
         />
       </div>
       <div class="event-description">
-        <p class="event-name">{{ content.fields.classTitle }}</p>
-        <p class="event-info">{{ content.fields.shortDescription }}</p>
-        <p class="event-info">{{ content.fields.classInstructor }}</p>
+        <p class="event-name">{{ content.fields.price }}</p>
+        <p class="event-info">{{ content.fields.address }}</p>
+        <p class="event-info">Bedrooms: {{ content.fields.bedrooms }}</p>
+        <p class="event-info">Bathrooms: {{ content.fields.bathrooms }}</p>
       </div>
     </div>
   </div>

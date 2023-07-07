@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Entry } from 'contentful';
+import { DealFlowService } from 'src/app/services/deal-flow.service';
 import { EventsService } from 'src/app/services/events.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 
@@ -16,21 +17,26 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private eventService: EventsService,
+    private dealFlowSevice: DealFlowService,
     private router: Router,
     private subscriptionService: SubscriptionService
   ) {}
 
   ngOnInit(): void {
     //check subscription status
-    this.subscriptionService.getSubscriptionStatus();
+    // this.subscriptionService.getSubscriptionStatus();
 
     //get all events
-    this.eventService.getAllEvents().then((contents) => {
+    // this.eventService.getAllEvents().then((contents) => {
+    //   this.contents = contents;
+    // });
+    //get all events
+    this.dealFlowSevice.getDealFlows().then((contents) => {
       this.contents = contents;
     });
   }
 
-  detailPage(id: any) {
-    this.router.navigate(['/detailPage/' + id]);
+  dealFlowDetailPage(id: any) {
+    this.router.navigate(['/dealsFlowDetailPage/' + id]);
   }
 }
