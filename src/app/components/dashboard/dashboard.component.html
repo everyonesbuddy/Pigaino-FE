@@ -8,7 +8,7 @@
 <section class="tabs">
   <div class="wrapper">
     <div id="tab-2">
-      <p>Deal Flows</p>
+      <p>Real Estate Market Analysis</p>
     </div>
   </div>
 </section>
@@ -24,10 +24,12 @@
         />
       </div>
       <div class="event-description">
-        <p class="event-name">{{ content.fields.price }}</p>
-        <p class="event-info">{{ content.fields.address }}</p>
-        <p class="event-info">Bedrooms: {{ content.fields.bedrooms }}</p>
-        <p class="event-info">Bathrooms: {{ content.fields.bathrooms }}</p>
+        <p class="event-name">{{ content.fields.city }}</p>
+        <p class="event-info">{{ content.fields.stateAndCountry }}</p>
+        <p class="event-info">Population: {{ content.fields.population }}</p>
+        <p class="event-info">
+          Date of Insight: {{ content.fields.dateOfInsight }}
+        </p>
       </div>
     </div>
   </div>

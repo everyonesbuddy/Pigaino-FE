@@ -1,16 +1,16 @@
 .login {
-  background-color: var(--primary-color);
+  background-color: var(--second-color);
   border-radius: 30px;
   font-size: 1.1rem;
   border: none;
-  color: #fff;
+  color: var(--fourth-color);
   padding: 0.8rem 1.5rem;
   cursor: pointer;
   font-family: "Ubuntu", sans-serif;
 }
 
 .login-header {
-  color: #000000;
+  color: var(--second-color);
   font-family: "Fredoka One", cursive;
 }
 

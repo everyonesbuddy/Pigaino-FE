@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Entry } from 'contentful';
 import { DealFlowService } from 'src/app/services/deal-flow.service';
-import { EventsService } from 'src/app/services/events.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 
 @Component({
@@ -16,7 +15,6 @@ export class DashboardComponent implements OnInit {
   featuredActs: Entry<any>[] = [];
 
   constructor(
-    private eventService: EventsService,
     private dealFlowSevice: DealFlowService,
     private router: Router,
     private subscriptionService: SubscriptionService
@@ -24,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     //check subscription status
-    // this.subscriptionService.getSubscriptionStatus();
+    this.subscriptionService.getSubscriptionStatus();
 
     //get all events
     // this.eventService.getAllEvents().then((contents) => {
