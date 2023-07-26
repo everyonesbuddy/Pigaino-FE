@@ -24,11 +24,17 @@
         />
       </div>
       <div class="event-description">
-        <p class="event-name">{{ content.fields.city }}</p>
-        <p class="event-info">{{ content.fields.stateAndCountry }}</p>
-        <p class="event-info">Population: {{ content.fields.population }}</p>
+        <p class="event-name">{{ content.fields.address }}</p>
         <p class="event-info">
-          Date of Insight: {{ content.fields.dateOfInsight }}
+          Listing Price: {{ content.fields.listingPrice }}
+        </p>
+        <p class="event-info">
+          CAGR (5yrs):
+          {{ content.fields.cagrPercentage }}
+        </p>
+        <p class="event-info">
+          Value Projections (2yrs):
+          {{ content.fields.twoYearsPropertyValueGrowthProjectionCash }}
         </p>
       </div>
     </div>
