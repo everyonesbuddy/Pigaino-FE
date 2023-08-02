@@ -78,8 +78,8 @@ export class SubscriptionService {
             // (response.subscriptions.length > 0 &&
             //   response.subscriptions[i].status === 'active') ||
             // 'trialing'
-            response.subscriptions.length > 0 &&
-            response.subscriptions[i].status === 'succeeded'
+            response.subscriptions.length > 0
+            // response.subscriptions[i].status === 'succeeded'
           ) {
             accessGranted = true;
             break;
