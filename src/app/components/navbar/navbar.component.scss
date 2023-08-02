@@ -16,3 +16,14 @@ a {
 .nav-link {
   font-family: "Ubuntu", sans-serif;
 }
+
+.button {
+  background-color: var(--second-color);
+  border-radius: 30px;
+  border: none;
+  text-align: center;
+}
+
+.button a {
+  color: var(--fourth-color);
+}

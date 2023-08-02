@@ -18,7 +18,7 @@ export class DealFlowDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       let id = params['id'];
-      this.dealFlowSevice.getDealFlow(id).then((deals) => {
+      this.dealFlowSevice.getModule(id).then((deals) => {
         this.deal = deals;
       });
     });

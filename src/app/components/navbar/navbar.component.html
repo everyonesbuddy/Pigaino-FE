@@ -20,10 +20,10 @@
           <a class="nav-link" routerLink="/signup">Sign Up</a>
         </li> -->
         <li *ngIf="!userIsAuthenticated" class="nav-item">
-          <a class="nav-link" routerLink="/signup">Sign Up</a>
-        </li>
-        <li *ngIf="!userIsAuthenticated" class="nav-item">
           <a class="nav-link" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated" class="nav-item button">
+          <a class="nav-link" routerLink="/signup">Get the course</a>
         </li>
         <li *ngIf="userIsAuthenticated" class="nav-item">
           <a href="#" class="nav-link" routerLink="/dashboard">Dashboard</a>

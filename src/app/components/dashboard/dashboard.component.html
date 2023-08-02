@@ -5,7 +5,7 @@
   </div>
 </section> -->
 
-<section class="tabs">
+<!-- <section class="tabs">
   <div class="wrapper">
     <div id="tab-2">
       <p>Real Estate Market Analysis</p>
@@ -36,6 +36,78 @@
           Value Projections (2yrs):
           {{ content.fields.twoYearsPropertyValueGrowthProjectionCash }}
         </p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <section class="tabs">
+  <div class="wrapper">
+    <div id="tab-2">
+      <p>Real Estate Market Analysis</p>
+    </div>
+  </div>
+</section>
+
+<div class="events">
+  <div *ngFor="let content of contents">
+    <div class="event" (click)="dealFlowDetailPage(content.sys.id)">
+      <div class="event-thumb-container">
+        <img
+          src="{{ content.fields.images[0].fields.file.url }}"
+          alt="thumbnail"
+          class="event-thumbnail"
+        />
+      </div>
+      <div class="event-description">
+        <p class="event-name">{{ content.fields.address }}</p>
+        <p class="event-info">
+          Listing Price: {{ content.fields.listingPrice }}
+        </p>
+        <p class="event-info">
+          CAGR (5yrs):
+          {{ content.fields.cagrPercentage }}
+        </p>
+        <p class="event-info">
+          Value Projections (2yrs):
+          {{ content.fields.twoYearsPropertyValueGrowthProjectionCash }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<section class="tabs">
+  <div class="wrapper">
+    <div id="tab-2">
+      <p>Course Module</p>
+    </div>
+  </div>
+</section>
+
+<div class="events">
+  <div *ngFor="let module of modules">
+    <div class="event" (click)="dealFlowDetailPage(module.sys.id)">
+      <div class="event-thumb-container">
+        <img
+          src="{{ module.fields.image.fields.file.url }}"
+          alt="thumbnail"
+          class="event-thumbnail"
+        />
+      </div>
+      <div class="event-description">
+        <h4 class="event-name">{{ module.fields.classTitle }}</h4>
+        <p class="event-info">
+          {{ module.fields.shortDescription }}
+        </p>
+        <!-- <p class="event-info">
+          CAGR (5yrs):
+          {{ content.fields.cagrPercentage }}
+        </p>
+        <p class="event-info">
+          Value Projections (2yrs):
+          {{ content.fields.twoYearsPropertyValueGrowthProjectionCash }}
+        </p> -->
       </div>
     </div>
   </div>

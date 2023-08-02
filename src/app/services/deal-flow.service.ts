@@ -41,4 +41,32 @@ export class DealFlowService {
       )
       .then((res) => res.items[0]);
   }
+
+  getModules(query?: object): Promise<Entry<any>[]> {
+    return this.client
+      .getEntries(
+        Object.assign(
+          {
+            content_type:
+              environment.contentfulPigainoFreeContent.contentTypeIds.product,
+          },
+          query
+        )
+      )
+      .then((res) => res.items);
+  }
+
+  getModule(eventId: any): Promise<Entry<any>> {
+    return this.client
+      .getEntries(
+        Object.assign(
+          {
+            content_type:
+              environment.contentfulPigainoFreeContent.contentTypeIds.product,
+          },
+          { 'sys.id': eventId }
+        )
+      )
+      .then((res) => res.items[0]);
+  }
 }

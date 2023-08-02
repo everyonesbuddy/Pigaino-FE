@@ -11,8 +11,7 @@ import { SubscriptionService } from 'src/app/services/subscription.service';
 })
 export class DashboardComponent implements OnInit {
   contents: Entry<any>[] = [];
-  recentStreams: Entry<any>[] = [];
-  featuredActs: Entry<any>[] = [];
+  modules: Entry<any>[] = [];
 
   constructor(
     private dealFlowSevice: DealFlowService,
@@ -22,15 +21,21 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     //check subscription status
-    // this.subscriptionService.getSubscriptionStatus();
+    this.subscriptionService.getSubscriptionStatus();
 
     //get all events
     // this.eventService.getAllEvents().then((contents) => {
     //   this.contents = contents;
     // });
     //get all events
-    this.dealFlowSevice.getDealFlows().then((contents) => {
-      this.contents = contents;
+    // this.dealFlowSevice.getDealFlows().then((contents) => {
+    //   this.contents = contents;
+    //   console.log('contents', this.contents);
+    // });
+
+    this.dealFlowSevice.getModules().then((modules) => {
+      this.modules = modules;
+      console.log('modules', this.modules);
     });
   }
 
