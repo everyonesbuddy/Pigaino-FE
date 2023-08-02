@@ -75,9 +75,11 @@ export class SubscriptionService {
       .subscribe((response: any) => {
         for (let i = 0; i < response.subscriptions.length; i++) {
           if (
-            (response.subscriptions.length > 0 &&
-              response.subscriptions[i].status === 'active') ||
-            'trialing'
+            // (response.subscriptions.length > 0 &&
+            //   response.subscriptions[i].status === 'active') ||
+            // 'trialing'
+            response.subscriptions.length > 0 &&
+            response.subscriptions[i].status === 'succeeded'
           ) {
             accessGranted = true;
             break;
